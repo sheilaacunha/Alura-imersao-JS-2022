@@ -86,8 +86,14 @@ header div img {
 .imgIcon{
     width: 40px;
     margin: 5px;
+    transition: transform 0.3s;
 }
 .imgBagdes{
     width: 60px;
     margin: 5px;
+    transition: transform 0.3s;
+}
+.imgIcon:hover, .imgBagdes:hover{
+    transform: scale(1.2);
+    
 }
