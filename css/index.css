@@ -44,6 +44,7 @@ header div img {
 }
 .btn {
     box-shadow: 5px 5px 20px 5px rgba(3, 1, 12, 0.747) inset;
+    transition: transform 0.3s;
 }
 .tema-btn {
     background-color: transparent;
@@ -53,6 +54,7 @@ header div img {
     width: 50px;
     transition: .5s;
     cursor: pointer;
+    
 }
 .dark {
     background: linear-gradient(236.85deg, #375b86 27.26%, #6b87a9 96.03%);
@@ -93,7 +95,7 @@ header div img {
     margin: 5px;
     transition: transform 0.3s;
 }
-.imgIcon:hover, .imgBagdes:hover{
+.imgIcon:hover, .imgBagdes:hover, .btn:hover{
     transform: scale(1.2);
     
 }
