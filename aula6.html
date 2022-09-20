@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
+    <title> Imersão Dev Alura - Aula 06</title>
+    <style>
+        .divLinks {
+            position: absolute;
+            top: 0;
+            padding: 20px;
+          left: 100px;
+        }
+        .links {
+            text-decoration: none;
+            color: white;
+        }
+        .links:hover {
+            text-decoration: underline;
+        }
+        body {
+            min-height: 400px;
+            background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
+            background-color: #111;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            height: 100vh;
+            margin-top: 50px;
+
+        }
+
+        .page-title {
+            color: #ffffff;
+            margin: 0 0 5px;
+        }
+
+        .page-subtitle {
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        .page-logo {
+            width: 200px;
+        }
+
+        .alura-logo {
+            width: 60px;
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+        }
+
+        table {
+            border: 2px solid white;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        h1 {
+            color: white;
+        }
+        th,
+        tr,
+        td {
+            border: solid 1px white;
+            color: white;
+        }
+        th{
+            height: 50px;
+            background: #f4f8f72c;
+        }
+
+        .listafotos img {
+            width: 60px;
+        }
+
+        .form-wrapper {
+            margin: 0 0 15px;
+        }
+
+        .form-wrapper input {
+            margin-right: 50px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.082);
+            color: #fff;
+        }
+
+        .form-wrapper button {
+            border: 2px solid #da1e26;
+            color:#da1e26;
+            background: rgba(255, 255, 255, 0.089);
+            font-weight: bold;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-wrapper button:hover {
+            opacity: 0.8;
+        }
+
+        .btn {
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .btnV {
+            background: #1edaa2;
+        }
+
+        .btnE {
+            background: rgba(255, 255, 0, 0.603);
+        }
+
+        .btnD {
+            background: #bb4a4fef;
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="divLinks">
+            <a class="links" href="./index.html">Home</a>
+            <a class="links" href="./aula1.html">🔢Calculadora de média</a>
+            <a class="links" href="./aula2.html">💸Conversor de moedas</a>
+            <a class="links" href="./aula3.html">🔮Mentalista</a>
+            <a class="links" href="./aula5.html">🎥AluraFlix</a>
+            <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
+            <a class="links" href="./aula8.html">🎮Super Trunfo</a>
+        </div>
+        <br>
+        <h1>Tabela de classificação</h1>
+
+        <div class="form-wrapper">
+            <p class="page-subtitle">Nome Jogador:
+                <input type="text" id="nomeJogador" placeholder="Insira o nome do Jogador">
+                Link da Imagem:
+                <input  type="text" id="imagem" placeholder="Insira endereço de imagem"> 
+                <button  onClick="adicionarJogador()">Adicionar</button>
+            </p>
+        </div>
+        <table >
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Vitórias</th>
+                    <th>Empates</th>
+                    <th>Derrotas</th>
+                    <th>Pontos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaJogadores" class="listafotos">
+
+            </tbody>
+        </table>
+        <div class="form-wrapper">
+            <button onClick="limparTabuleiro()">Nova Rodada</button>
+            <button onClick="limparJogadores()">Novo Jogo</button>
+        </div>
+        <a href="https://alura.com.br/" target="_blank">
+            <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        </a>
+    </div>
+
+
+    <script>
+        let jogadores = [];
+
+        exibeJogadores(jogadores);
+
+        function calculaPontos(jogador) {
+            let pontos = jogador.vitorias * 3 + jogador.empates;
+            return pontos;
+        }
+        function exibeJogadores(jogadores) {
+            let elemento = "";
+            for (let i = 0; i < jogadores.length; i++) {
+                jogadores[i].pontos = calculaPontos(jogadores[i]);
+                elemento += "<tr><td><img src='" + jogadores[i].imagem + "'/></td>";
+                elemento += "<td>" + jogadores[i].nome + "</td>";
+                elemento += "<td>" + jogadores[i].vitorias + "</td>";
+                elemento += "<td>" + jogadores[i].empates + "</td>";
+                elemento += "<td>" + jogadores[i].derrotas + "</td>";
+                elemento += "<td>" + jogadores[i].pontos + "</td>";
+                elemento +=
+                    "<td><button class='btnV btn' onClick='adicionarVitoria(" + i + ")'>Vitória</button></td>";
+                elemento +=
+                    "<td><button class='btnE btn' onClick='adicionarEmpate(" + i + ")'>Empate</button></td>";
+                elemento +=
+                    "<td><button class='btnD btn' onClick='adicionarDerrota(" +
+                    i +
+                    ")'>Derrota</button></td></tr>";
+            }
+
+            let tabelaJogadores = document.getElementById("tabelaJogadores");
+            tabelaJogadores.innerHTML = elemento;
+        }
+
+        function adicionarVitoria(i) {
+            let jogador = jogadores[i];
+            jogador.vitorias++;
+            exibeJogadores(jogadores);
+        }
+        function adicionarEmpate(i) {
+            let jogador = jogadores[i];
+            jogador.empates++;
+            exibeJogadores(jogadores);
+        }
+
+        function adicionarDerrota(i) {
+            let jogador = jogadores[i];
+            jogador.derrotas++;
+            exibeJogadores(jogadores);
+        }
+        function adicionarJogador() {
+            let nomeJogador = document.getElementById("nomeJogador").value;
+            let fotoJogador = document.getElementById("imagem").value;
+
+            jogadores.push({
+                imagem: fotoJogador,
+                nome: nomeJogador,
+                vitorias: 0,
+                empates: 0,
+                derrotas: 0,
+                pontos: 0
+            });
+
+            exibeJogadores(jogadores);
+        }
+        function limparTabuleiro() {
+            for (let i = 0; i < jogadores.length; i++) {
+                jogadores[i].vitorias = 0;
+                jogadores[i].empates = 0;
+                jogadores[i].derrotas = 0;
+                jogadores[i].pontos = 0;
+            }
+            exibeJogadores(jogadores);
+        }
+        function limparJogadores() {
+            jogadores = [];
+            exibeJogadores(jogadores);
+        }
+    </script>
+</body>
+
+</html>

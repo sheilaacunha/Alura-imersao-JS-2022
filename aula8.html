@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Imersão Dev - Aula 08</title>
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+      min-height: 854px;
+      background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-07-super-trunfo-bg.png');
+      background-color: #000000;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding-bottom: 20vh;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 80px;
+      height: 100vh;
+
+    }
+
+    .page-title {
+      color: #ffffff;
+      margin: 5px 0;
+    }
+     .resultado-final {
+      color: black;
+      font-size: 25px; 
+      border-radius: 5px;   
+      padding: 10px;
+      background-color: #ffffff33;
+      border: 2px solid;
+    }
+    .btnV{
+      color: rgb(24, 179, 10);
+    }
+    .btnE{
+     color: rgb(20, 170, 163);
+      
+    }
+    .btnP{    
+      color: red;
+    }
+
+    button,
+    .button-jogar {
+      margin: 1rem 0;
+      border-radius: 5px;
+      border: none;
+      font-weight: bolder;
+      width: 180px;
+      height: 50px;
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.11);
+      color: gold;
+      border: 2px solid;
+      cursor: pointer;
+
+    }
+    h2 {
+      color: white;
+    }
+
+    #carta-jogador,
+    #carta-maquina {
+      width: 360px;
+      height: 500px;
+      overflow: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      background-size: 350px 300px;
+      background-repeat: no-repeat;
+      background-position-x: 5px;
+      background-position-y: 10px;
+      border-radius: 33px;
+    }
+
+    .alura-logo {
+      width: 60px;
+      position: absolute;
+      top: 100px;
+      right: 50px;
+    }
+
+    #carta-jogador h3 {
+      text-align: center;
+    }
+
+    .carta-imagem {
+      border: 1px solid black;
+      height: 100px;
+      margin: 10px;
+    }
+
+    .carta-imagem img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carta-status {
+      height: 160px;
+      margin: 2rem;
+      color: white;
+      z-index: 2;
+    }
+
+    .carta-status input {
+      margin: 20px 10px;
+    }
+    .--spacing {
+      margin-left: 2.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+    }
+
+    .carta-subtitle {
+      z-index: 2;
+      position: absolute;
+      top: 16px;
+      left: 37px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    #cartas {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .carta-status p {
+      margin-bottom: 2rem;
+    }
+
+    .divLinks {
+      position: absolute;
+      top: 0;
+      padding: 20px;
+    }
+
+    .links {
+      text-decoration: none;
+      color: white;
+
+    }
+
+    .links:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="divLinks">
+      <a class="links" href="./index.html">Home</a>
+      <a class="links" href="./aula1.html">🔢Calculadora de média</a>
+      <a class="links" href="./aula2.html">💸Conversor de moedas</a>
+      <a class="links" href="./aula3.html">🔮Mentalista</a>
+      <a class="links" href="./aula5.html">🎥AluraFlix</a>
+      <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
+      <a class="links" href="./aula8.html">🎮Super Trunfo</a>
+    </div>
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" class="page-logo"
+      alt="">
+    <h1 class="page-title">Super Trunfo</h1>
+    <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+    <form id="form">
+      <h2>Escolha o seu atributo</h2>
+      <div class="wrapper">
+        <div>
+          <div id="carta-jogador">
+            <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png"
+              style=" width: inherit; height: inherit; position: absolute;">
+            <h3></h3>
+          </div>
+        </div>
+        <div>
+          <button class="button-jogar" type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
+          <div id="resultado"></div>
+        </div>
+       
+        <div>
+          <div id="carta-maquina" class="carta"><img
+              src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png"
+              style=" width: inherit; height: inherit; position: absolute;"></div>
+        </div>
+      </div>
+     
+    </form>
+    <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+  </div>
+
+  <script>
+    let cartaPaulo = {
+      nome: "Shiryu de dragão",
+      imagem:
+        "http://pm1.narvii.com/6399/96fdb9d4fe6a9e72b9bc60ad418e3c43795e53b4_00.jpg",
+      atributos: {
+        ataque: 5,
+        defesa: 9,
+        magia: 10
+      }
+    };
+
+    let cartaRafa = {
+      nome: "Bulbasauro",
+      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+      atributos: {
+        ataque: 7,
+        defesa: 8,
+        magia: 6
+      }
+    };
+
+    let cartaGui = {
+      nome: "Darth Vader",
+      imagem:
+        "https://images-na.ssl-images-amazon.com/images/I/41i-0NH0q9L._SX328_BO1,204,203,200_.jpg",
+      atributos: {
+        ataque: 9,
+        defesa: 8,
+        magia: 2
+      }
+    };
+
+    let cartaMaquina;
+    let cartaJogador;
+    let cartas = [cartaPaulo, cartaRafa, cartaGui];
+    // 0          1           2
+
+    function sortearCarta() {
+      let numeroCartaMaquina = parseInt(Math.random() * 3);
+      cartaMaquina = cartas[numeroCartaMaquina];
+
+      let numeroCartaJogador = parseInt(Math.random() * 3);
+      while (numeroCartaJogador == numeroCartaMaquina) {
+        numeroCartaJogador = parseInt(Math.random() * 3);
+      }
+      cartaJogador = cartas[numeroCartaJogador];
+      console.log(cartaJogador);
+
+      document.getElementById("btnSortear").disabled = true;
+      document.getElementById("btnJogar").disabled = false;
+      exibirCartaJogador();
+    }
+
+    function obtemAtributoSelecionado() {
+      let radioAtributo = document.getElementsByName("atributo");
+      for (let i = 0; i < radioAtributo.length; i++) {
+        if (radioAtributo[i].checked) {
+          return radioAtributo[i].value;
+        }
+      }
+    }
+
+    function jogar() {
+      console.log("chamou");
+      let atributoSelecionado = obtemAtributoSelecionado();
+      let divResultado = document.getElementById("resultado");
+
+      if (
+        cartaJogador.atributos[atributoSelecionado] >
+        cartaMaquina.atributos[atributoSelecionado]
+      ) {
+        htmlResultado = "<p class='resultado-final btnV'>Venceu</p>";
+      } else if (
+        cartaJogador.atributos[atributoSelecionado] <
+        cartaMaquina.atributos[atributoSelecionado]
+      ) {
+        htmlResultado = "<p class='resultado-final btnP'>Perdeu</p>";
+      } else {
+        htmlResultado = "<p class='resultado-final btnE'>Empatou</p>";
+      }
+      divResultado.innerHTML = htmlResultado;
+
+      document.getElementById("btnJogar").disabled = true;
+      exibirCartaMaquina();
+    }
+
+    function exibirCartaJogador() {
+      let divCartaJogador = document.getElementById("carta-jogador");
+      divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`;
+      let moldura =
+        '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
+      let tagHTML = "<div id='opcoes' class='carta-status'>";
+
+      let opcoesTexto = "";
+      for (let atributo in cartaJogador.atributos) {
+        opcoesTexto +=
+          "<input type='radio' name='atributo' value='" +
+          atributo +
+          "'>" +
+          atributo +
+          " " +
+          cartaJogador.atributos[atributo] +
+          "<br>";
+      }
+      let nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
+
+      divCartaJogador.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>";
+    }
+
+    function exibirCartaMaquina() {
+      let divCartaMaquina = document.getElementById("carta-maquina");
+      divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`;
+          let moldura =
+        '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
+      let tagHTML = "<div id='opcoes' class='carta-status'>";
+
+      let opcoesTexto = "";
+      for (let atributo in cartaMaquina.atributos) {
+        opcoesTexto +=
+          "<p type='text' name='atributo' value='" +
+          atributo +
+          "'>" +
+          atributo +
+          " " +
+          cartaMaquina.atributos[atributo] +
+          "</p>";
+      }
+      let nome = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`;
+
+      divCartaMaquina.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>";
+    }
+
+  </script>
+</body>
+
+</html>
+</body>
+
+</html>

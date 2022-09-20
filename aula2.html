@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
+    <title> Imersão Dev Alura - Aula 02</title>
+    <style>
+        body {
+            font-family: "Roboto Mono", monospace;
+            min-height: 400px;
+            background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-1-conversor-de-moedas.png");
+            background-color: #000000;
+            background-size: 100vh;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 80px;
+            height: 100vh;
+
+        }
+
+        .page-title {
+            color: #ffffff;
+            margin: 0 0 5px;
+        }
+
+        .page-subtitle {
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        .page-logo {
+            width: 200px;
+        }
+
+        .alura-logo {
+            width: 60px;
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+        }
+
+        input {
+            margin: 12px;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        label {
+            color: white;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 30px;
+            margin-left: 250px;
+        }
+
+        .divLinks {
+            position: absolute;
+            top: 0;
+            padding: 20px;
+        }
+
+        .links {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .links:hover {
+            text-decoration: underline;
+        }
+
+        .btnC {
+            width: 100px;
+            margin-left: 0px;
+            background-color: transparent;
+            color: gold;
+            border: 2px solid;
+            margin-top: 12px;
+            padding: 4px 8px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Conversor de moedas
+        </h1>
+        <p class="page-subtitle">
+            Descubra os valores em Real R$:
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+            class="page-logo" alt=""><br><br>
+        <label for="moeda">Insira o valor:</label><br>
+        <input type="number" required id="valor" size="2" /><br>
+        <button class="btnC" type="submit" onclick="converter()">Converter</button>
+        <h2 id="valorConvertido"> </h2>
+    </div>
+    <div href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        <div class="divLinks">
+            <a class="links" href="./index.html">Home</a>
+            <a class="links" href="./aula1.html">🔢Calculadora de média</a>
+            <a class="links" href="./aula2.html">💸Conversor de moedas</a>
+            <a class="links" href="./aula3.html">🔮Mentalista</a>
+            <a class="links" href="./aula5.html">🎥AluraFlix</a>
+            <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
+            <a class="links" href="./aula8.html">🎮Super Trunfo</a>
+        </div>
+    </div>
+
+    <script>
+        function converter() {
+            let valorElemento = document.getElementById('valor');
+
+            let valorEmReal = parseFloat(valorElemento.value) * 5;
+
+            let valorConvertido = document.getElementById('valorConvertido');
+            valorConvertido.innerHTML = `O resultado em real é R$ : ${valorEmReal}`
+
+        }
+
+
+    </script>
+</body>
+
+</html>
