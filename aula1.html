@@ -5,126 +5,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./public/css/butonInputCal.css">
   <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
   <title> Imersão Dev Alura - Aula 01</title>
   <style>
-  .aula1{
-    font-family: "Roboto Mono", monospace;
-    min-height: 400px;
-    background-color: #000000;
-   
-  }
-
-  
-  .container {
-   margin-top:80px;
-    text-align: center;
-    height: 100vh;
-  }
-  
-  .page-title {
-    
-    color: #ffffff;
-    margin: 0 0 5px;
-  }
-  
-  .page-subtitle {
-    color: #ffffff;
-    margin-top: 5px;
-  }
-  
-  .page-logo {
-    width: 200px;
-  }
-  .page-logo1{
-    width: 10px;
-  }
-  
-.alura-logo {
-    width: 60px;
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-}
-.divLinks{
-position: absolute;
-top: 0;
-padding: 20px;
-}
-.links{
-  text-decoration: none ;
-  color: white;
-
-}
-.links:hover{
-    text-decoration: underline;
-    color: #ffffff;
-}
-
-input{
-  margin: 5px;
-  width: 300px;
-}
-.btnC{
-  width: 100px;
-  margin-left: 0px;
-  background-color: transparent;
-  color: gold;
-  border: 2px solid;
-  cursor: pointer;
-}
   </style>
 </head>
 
-
-<body class="aula1">
-  <div class="container">
-    <h1 class="page-title">
-      Calculadora de média</h1>
-    <p class="page-subtitle">
-      Descubra qual a sua média de nota de todas as provas!
-    </p>
-    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
-      class="page-logo" alt="">
-
-    <div class="row mt-2 d-flex">
-      <div class="col-6 align-self-start ">
-        <img class="imgAula1" src="./public/img/bg.png" alt="">
-      </div>
-      <div class="col-6 text-white mt-5 d-flex justify-content-center ">
-        <form id="formCalcular">
-          <div class=" d-block">
-            <input type="number" placeholder="insira sua nota 1" required id="nota1">
-            <input type="number" required placeholder="insira sua nota 2" id="nota2">
-            <input type="number" required placeholder="insira sua nota 3" id="nota3">
-
-          </div>
-          <input class="btnC" type="submit" value="Calcular">
-          <h3 id="mediaFinal"></h3>
-          <h4 id="resultado"></h4>
-        </form>
-
+<body class="bodyCalcMedia">
+  <header>
+    <nav>
+      <ul>
+        <li> <a class="home" href="./index.html">🏠 Home</a></li>
+        <li> <a href="./aula1.html">🔢 Calculadora de média</a></li>
+        <li><a href="./aula2.html">💸 Conversor de moedas</a></li>
+        <li><a href="./aula3.html">🔮 Mentalista</a></li>
+        <li><a href="./aula5.html">🎥 AluraFlix</a></li>
+        <li> <a href="/aula6.html">😎 Tabelas de classificação</a></li>
+        <li> <a href="./aula8.html">🎮 Super Trunfo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="mainCalcMedia">
+    <div class="ladoLeft">
+      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+        alt="logo imersao alura">
+      <h1>
+        Calculadora de média</h1>
+      <p>
+        Descubra qual a sua média de nota de todas as provas!
+      </p>
+      <form id="formCalcular">
+        <div class="formDivCalcMedia">
+          <input class="inputCalcMedia" type="number" placeholder="insira sua nota 1" required id="nota1">
+        </div>
+        <div class="formDivCalcMedia">
+          <input class="inputCalcMedia" type="number" required placeholder="insira sua nota 2" id="nota2">
+        </div>
+        <div class="formDivCalcMedia">
+          <input class="inputCalcMedia" type="number" required placeholder="insira sua nota 3" id="nota3">
+        </div>
+        <div>
+          <button class="full-rounded" type="submit"><span>Calcular</span>
+            <div class="border full-rounded"></div>
+          </button>
+        </div>
+      </form>
+      <div class="msgMediaFinal">
+        <h2 id="mediaFinal"></h2>
+        <h4 id="resultado"></h4>
       </div>
     </div>
-    <div class="divLinks">
-      <a class="links" href="./index.html">Home</a>
-        <a class="links" href="./aula1.html">🔢Calculadora de média</a>
-        <a class="links" href="./aula2.html">💸Conversor de moedas</a>
-        <a class="links" href="./aula3.html">🔮Mentalista</a>
-        <a class="links" href="./aula5.html">🎥AluraFlix</a>
-        <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
-        <a class="links" href="./aula8.html">🎮Super Trunfo</a>
-      
-    </div>
-  </div>
-  
-
-  <a href="https://alura.com.br/" target="_blank">
-    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-  </a>
+    <div class="ladoRight"> </div>
+    <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+  </main>
   <script>
 
     let nota1 = document.getElementById('nota1');
@@ -151,30 +88,22 @@ input{
       let notaFinal = somaNotas.toFixed(2)
       console.log(notaFinal);
 
-      mediaFinal.innerText = `Sua Média é ${notaFinal}`
-
-      if (notaFinal >= 8) {
-
+      if (notaFinal <= 0 || notaFinal >= 11) {
+        resultado.innerText = 'Insira uma nota que seja de 1 a 10.'
+      } else if (notaFinal >= 8) {
+        mediaFinal.innerText = `Sua Média é ${notaFinal}`
         resultado.innerText = 'Show você está estudando pra caramba !!!!'
       } else if (notaFinal <= 5) {
+        mediaFinal.innerText = `Sua Média é ${notaFinal}`
         resultado.innerText = ' hummm que pena sua nota foi baixa, mas não desamine, estude mais você consegue !!!'
       } else {
+        mediaFinal.innerText = `Sua Média é ${notaFinal}`
         resultado.innerText = 'Você esta na média mas pode melhorar !!! #Ficaadica'
       }
     }
 
-
   </script>
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
+  0
 </body>
 
 </html>

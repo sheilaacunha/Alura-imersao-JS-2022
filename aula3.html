@@ -6,123 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/style.css">
     <title> Imersão Dev Alura - Aula 03</title>
-    <style>
-        body {
-            font-family: "Roboto Mono", monospace;
-            min-height: 600px;
-            background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png");
-            background-color: #000000;
-            background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-        }
-
-        .container {
-            text-align: center;
-            margin-top: 80px;
-            height: 100vh;
-
-        }
-
-        .page-title {
-            color: #ffffff;
-            margin: 0 0 5px;
-        }
-
-        .page-subtitle {
-            color: #ffffff;
-            margin-top: 16px;
-        }
-
-        .page-logo {
-            width: 200px;
-        }
-
-        .alura-logo {
-            width: 60px;
-            position: absolute;
-            bottom: 50px;
-            right: 50px;
-        }
-
-        @media (max-height: 500px) {
-            body {
-                min-height: 800px;
-            }
-        }
-
-        input {
-            margin: 4px;
-            padding: 6px;
-            border-radius: 5px;
-        }
-        .resultado {
-            color: #ffffff;
-            text-align: center;
-            margin-top: 16px;
-        }
-
-        .divLinks {
-            position: absolute;
-            top: 0;
-            padding: 20px;
-        }
-
-        .links {
-            text-decoration: none;
-            color: white;
-
-        }
-
-        .links:hover {
-            text-decoration: underline;
-            color: #ffffff;
-        }
-
-        .btnC {
-            width: 100px;
-            margin-left: 0px;
-            background-color: transparent;
-            color: gold;
-            border: 2px solid;
-            cursor: pointer;
-            margin-top: 12px;
-            padding: 4px 8px;
-            border-radius: 10px;
-        }
-      
-    </style>
 </head>
-<div>
-    <div class="container">
-        <h1 class="page-title">
-            Mentalista
-        </h1>
-        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg" class="page-logo"
-            alt=""><br>
-        <p class="page-subtitle">
-            Digite um número de 0 a 10
-        </p>
-        <input type="number" id="valor" /><br>
-        <button class="btnC" type="submit" onclick="chutar()">Chutar</button>
-        <h2 class="resultado" id="resultado"></h2>
 
-        <div class="divLinks">
-            <a class="links" href="./index.html">Home</a>
-            <a class="links" href="./aula1.html">🔢Calculadora de média</a>
-            <a class="links" href="./aula2.html">💸Conversor de moedas</a>
-            <a class="links" href="./aula3.html">🔮Mentalista</a>
-            <a class="links" href="./aula5.html">🎥AluraFlix</a>
-            <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
-            <a class="links" href="./aula8.html">🎮Super Trunfo</a>
+<body class="bodyMentalista">
+    <header>
+        <nav>
+            <ul>
+                <li> <a class="home" href="./index.html">🏠 Home</a></li>
+                <li> <a href="./aula1.html">🔢 Calculadora de média</a></li>
+                <li><a href="./aula2.html">💸 Conversor de moedas</a></li>
+                <li><a href="./aula3.html">🔮 Mentalista</a></li>
+                <li><a href="./aula5.html">🎥 AluraFlix</a></li>
+                <li> <a href="/aula6.html">😎 Tabelas de classificação</a></li>
+                <li> <a href="./aula8.html">🎮 Super Trunfo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="mainMentalista">
+
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg" alt="">
+        <div class="divMentalista">
+            <h1>
+                Mentalista
+            </h1>
+            <p>
+                Digite um número de 0 a 10
+            </p>
+            <input class="inputMentalista" required type="number" id="valor" />
+            <button class="buttonMentalista" type="submit" onclick="chutar()">Chutar</button>
+            <h2 id="resultado"></h2>
         </div>
-    </div>
-    <a href="https://alura.com.br/" target="_blank">
-        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-    </a>
 
-</div>
+
+        <a href="https://alura.com.br/" target="_blank">
+            <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        </a>
+    </main>
+
+
+</body>
 <script>
 
     let numeroSecreto = parseInt(Math.random() * 11);
@@ -134,7 +58,13 @@
         let chute = document.getElementById('valor').value;
         numeroTentativas--
 
-        if (numeroTentativas >= 1) {
+        if (chute < 0 || chute == "") {
+            resultado.innerHTML = 'Inválido !!!'
+            setTimeout(() => {
+                resultado.innerHTML = '';
+                chute.value = ""
+            }, 1500);
+        } else if (numeroTentativas >= 1) {
             if (chute == numeroSecreto) {
                 resultado.innerHTML = 'Boa....Acertou..... ';
 

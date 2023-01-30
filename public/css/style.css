@@ -1,0 +1,327 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    height: 100vh;
+}
+
+.bodyCalcMedia {
+    min-height: 400px;
+    background-color: #000000;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: calc(90%) bottom;
+    background-size: 40%;
+}
+
+.bodyConversor {
+    min-height: 400px;
+    background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-1-conversor-de-moedas.png");
+    background-color: #000000;
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bodyMentalista {
+    background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png");
+    background-color: #000000;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.bodyAluraFlix {
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMx77vEKeER_bY0SBbiN8PHMjcOonVWB3PF8EZswvRb_CmQikUF_dae1D_oQ1QAqB3TC7WP4jhqtbrkXZCiiehHxvE-OMnUffQ1BDIx900nUMnfT-VmcwbqO42afMasgVFFAt1a9I1mv_0rJaOeWWAfuj21jYV56Fi7X_zgxUnq9oPNk19BXfMFA8X/s2240/3875B9CF-45BB-4564-8364-BD891B924CF3.png");
+    background-color: #000000;
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+header {
+    height: 10%;
+    border-bottom: 1px solid rgba(222, 184, 135, 0.425);
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.home {
+    color: #FADA06;
+}
+
+.home:hover {
+    text-decoration: underline;
+}
+
+.mainCalcMedia {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 90%;
+}
+
+.mainConversor {
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.mainMentalista {
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainAluraFlix {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #88888836;
+}
+
+.ladoLeft {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+}
+
+.ladoLeft,
+.mainConversor,
+.mainMentalista,
+.mainMentalista,
+.mainAluraFlix :is(h1, h2, h4, p) {
+    color: #fff;
+}
+
+.ladoLeft img,
+.mainConversor img,
+.mainMentalista img {
+    width: fit-content;
+}
+
+.ladoLeft form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    width: 40%;
+    height: 40%;
+
+}
+
+.msgMediaFinal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    gap: 10px;
+    text-align: center;
+
+}
+
+.alura-logo {
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+}
+
+.inputConversor {
+    color: #FADA06;
+    border: 2px solid #FADA06;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 190px;
+}
+
+.inputConversor:active {
+    box-shadow: 2px 2px 15px #FADA06 inset;
+}
+
+.buttonConvertor {
+    --green: #FADA06;
+    font-size: 15px;
+    padding: 0.6em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 2px solid var(--green);
+    background: transparent;
+    color: var(--green);
+
+}
+
+.buttonConvertor:hover {
+    color: #FADA06;
+    box-shadow: inset 0 0 10px #fad90634, 0 0 9px 3px #fad90634;
+}
+
+.buttonConvertor:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, #fad90634 40%, #fad90634 60%, transparent 100%);
+}
+
+.buttonConvertor:hover:before {
+    transform: translateX(15em);
+}
+
+.divFormConversor {
+    display: flex;
+    gap: 20px;
+}
+
+.divMentalista {
+    background-color: rgba(240, 248, 255, 0.212);
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.inputMentalista {
+    border: 2px solid #e8e8e8;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #212121;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+}
+
+.inputMentalista:focus {
+    outline-color: white;
+    background-color: #212121;
+    color: #e8e8e8;
+    box-shadow: 5px 5px #888888;
+}
+
+.buttonMentalista {
+    --width: 150px;
+    --timing: 2s;
+    border: 0;
+    width: var(--width);
+    padding-block: 0.5em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    background: #5938E6;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+.buttonMentalista:hover {
+    background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
+    animation: var(--timing) linear dance6123 infinite;
+    transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+    to {
+        background-position: var(--width);
+    }
+}
+
+.divFormAluraFlix {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonBodyAluraFlix {
+    border: 2px solid;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.103);
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttonBodyAluraFlix:hover {
+    opacity: 0.5;
+    background-color: rgb(165, 42, 42);
+    border: 2px solid rgb(165, 42, 42);
+}
+
+.inputFormAluraFlix {
+    border: none;
+    width: 30%;
+    border-bottom: 2px solid #fff;
+outline: none;
+   font-size: 16px;
+    background-color: transparent;
+    color: #ffffff;
+}
+  #listaFilmes {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    #listaFilmes img {
+      max-height: 180px;
+    }

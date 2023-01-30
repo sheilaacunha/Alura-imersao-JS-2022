@@ -2,210 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
-    <title> Imersão Dev Alura - Aula 04</title>
-    <style>
-        .divLinks {
-            position: absolute;
-            top: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="./public/css/style.css">
+  <title> Imersão Dev Alura - Aula 04</title>
+  <style>
+    img {
+      max-height: 250px;
+      transition: transform 0.3s;
+    }
 
-        .links {
-            text-decoration: none;
-            color: white;
-
-        }
-
-        .links:hover {
-            text-decoration: underline;
-            color: #ffffff;
-        }
-
-        body {
-            font-family: "Roboto Mono", monospace;
-            text-align: center;
-            background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
-            background-color: #000000;
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            margin-top: 80px;
-        }
-
-        .page-title {
-            color: #ffffff;
-            margin: 0 0 5px;
-        }
-
-        .page-subtitle {
-            color: #ffffff;
-            margin-top: 5px;
-        }
-
-        .page-logo {
-            width: 200px;
-        }
-
-        .alura-logo {
-            width: 60px;
-            position: absolute;
-            bottom: 50px;
-            right: 50px;
-        }
-
-        #listaFilmes img {
-            margin: 10px;
-            max-height: 250px;
-        }
-
-        .form-wrapper {
-            margin: 0 0 15px;
-        }
-
-        .form-wrapper input {
-            margin: 10px auto;
-            padding: 10px 15px;
-        }
-
-        .form-wrapper button {
-            border: 2px solid ;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.103);
-            font-weight: bold;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 4px;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .form-wrapper button:hover {
-            opacity: 0.8;
-        }
-
-        img {
-            max-height: 250px;
-            transition: transform 0.3s;
-        }
-
-        img:hover {
-            transform: scale(1.2);
-            overflow: hidden;
-        }
-
-        h2 {
-            color: #ffffff;
-        }
-
-        #listaFilmes {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-    </style>
+    img:hover {
+      transform: scale(1.2);
+      overflow: hidden;
+    }
+  </style>
 </head>
 
-<body>
+<body class="bodyAluraFlix">
+  <header>
+    <nav>
+      <ul>
+        <li> <a class="home" href="./index.html">🏠 Home</a></li>
+        <li> <a href="./aula1.html">🔢 Calculadora de média</a></li>
+        <li><a href="./aula2.html">💸 Conversor de moedas</a></li>
+        <li><a href="./aula3.html">🔮 Mentalista</a></li>
+        <li><a href="./aula5.html">🎥 AluraFlix</a></li>
+        <li> <a href="/aula6.html">😎 Tabelas de classificação</a></li>
+        <li> <a href="./aula8.html">🎮 Super Trunfo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="mainAluraFlix">
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" alt="">
+    <h1>
+      AluraFlix
+    </h1>
 
-    <div class="container">
-        <h1 class="page-title">
-          AluraFlix
-        </h1>
-        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo"
-          alt="">
-        <p class="page-subtitle">
-          Qual seu filme/série favorito?
-        </p>
-        <div class="form-wrapper">
-          <input type="text" id="urlFilme" name="urlFilme"required placeholder="Insira endereço de imagem">
-          <input type="text" id="nomeFilme" name="nomeFilme"required placeholder="Insira o nome do filme">
-          <button onClick="adicionarFilme()">Adicionar Filme</button>
-          <button onClick="removerFilme()">Remover Filme</button>
-        </div>
-        <h2 id="aviso"></h2>
-        <div id="listaFilmes"></div>
-        <a href="https://alura.com.br/" target="_blank">
-          <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-        </a>
-        <div class="divLinks">
-          <a class="links" href="./index.html">Home</a>
-          <a class="links" href="./aula1.html">🔢Calculadora de média</a>
-          <a class="links" href="./aula2.html">💸Conversor de moedas</a>
-          <a class="links" href="./aula3.html">🔮Mentalista</a>
-          <a class="links" href="./aula5.html">🎥AluraFlix</a>
-          <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
-          <a class="links" href="./aula8.html">🎮Super Trunfo</a>
-    
-        </div>
-    
-      </div>
-      
-      <script>
-        const filme = {
-          url: "",
-          nome: ""
-        };
-    
-        const filmes = [];
-    
-        function listarFilmes(filme) {
-          console.log(filme.url);
-          filme =
-            "<div class= filmes>" +
-            "<img src=" +
-            filme.url +
-            "> <h2>" +
-            filme.nome +
-            "</h2>" +
-            "</div>";
-          let listaFilmes = document.getElementById("listaFilmes");
-          filmes.push(filme);
-          listaFilmes.innerHTML = filmes;
-        }
-    
-        function adicionarFilme() {
-          let urlFilmeInput = document.getElementById("urlFilme").value;
-          let nomeFilmInput = document.getElementById("nomeFilme").value;
-          let aviso = document.getElementById("aviso");
-          aviso.innerHTML = "";
-    
-          if (
-            urlFilmeInput.endsWith(".jpg" || ".png" || ".gif" || ".jpeg") ||
-            !nomeFilmInput == ""
-          ) {
-            filme.url = urlFilmeInput;
-            filme.nome = nomeFilmInput;
-            listarFilmes(filme);
-          } else {
-            aviso.innerHTML = "Endereço de filme e nome inválido";
-          }
-    
-          urlFilmeInput = document.getElementById("urlFilme").value = "";
-          nomeFilmInput = document.getElementById("nomeFilme").value = "";
-        }
-    
-        function removerFilme() {
-          if (filmes.length == 0) {
-            aviso.innerHTML = "Não há nada para apagar.";
-          } else {
-            filmes.pop();
-            listaFilmes.innerHTML = filmes;
-          }
-        }
-    
-      </script>
+    <p>
+      Qual seu filme/série favorito?
+    </p>
+    <div class="divFormAluraFlix">
+      <input class="inputFormAluraFlix" type="text" id="urlFilme" name="urlFilme" required
+        placeholder="Insira endereço de imagem">
+      <input class="inputFormAluraFlix" type="text" id="nomeFilme" name="nomeFilme" required
+        placeholder="Insira o nome do filme">
+      <button class="buttonBodyAluraFlix" onClick="adicionarFilme()">Adicionar </button>
+      <button class="buttonBodyAluraFlix" onClick="removerFilme()">Remover </button>
+    </div>
+    <h2 id="aviso"></h2>
+    <div id="listaFilmes"></div>
+    <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+
+  </main>
+
+  <script>
+    const filme = {
+      url: "",
+      nome: ""
+    };
+
+    const filmes = [];
+
+    function listarFilmes(filme) {
+      console.log(filme.url);
+      filme =
+        "<div >" +
+        "<img src=" +
+        filme.url +
+        "> <h2>" +
+        filme.nome +
+        "</h2>" +
+        "</div>";
+      let listaFilmes = document.getElementById("listaFilmes");
+      filmes.push(filme);
+      listaFilmes.innerHTML = filmes;
+    }
+
+    function adicionarFilme() {
+      let urlFilmeInput = document.getElementById("urlFilme").value;
+      let nomeFilmInput = document.getElementById("nomeFilme").value;
+      let aviso = document.getElementById("aviso");
+      aviso.innerHTML = "";
+
+      if (
+        urlFilmeInput.endsWith(".jpg" || ".png" || ".gif" || ".jpeg") ||
+        !nomeFilmInput == ""
+      ) {
+        filme.url = urlFilmeInput;
+        filme.nome = nomeFilmInput;
+        listarFilmes(filme);
+      } else {
+        aviso.innerHTML = "Endereço de filme ou nome inválido";
+      }
+
+      urlFilmeInput = document.getElementById("urlFilme").value = "";
+      nomeFilmInput = document.getElementById("nomeFilme").value = "";
+    }
+
+    function removerFilme() {
+      if (filmes.length == 0) {
+        aviso.innerHTML = "Não há nada para apagar.";
+      } else {
+        filmes.pop();
+        listaFilmes.innerHTML = filmes;
+      }
+    }
+
+  </script>
 </body>
 
 </html>
