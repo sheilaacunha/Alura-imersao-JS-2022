@@ -6,21 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://www.alura.com.br/assets/img/home/alura-logo.svg" type="image/x-icon">
-    <title> Imersão Dev Alura - Aula 06</title>
+    <title> Imersão Dev Alura - Tabelas</title>
     <style>
         .divLinks {
             position: absolute;
             top: 0;
             padding: 20px;
-          left: 100px;
+            left: 100px;
         }
+
         .links {
             text-decoration: none;
             color: white;
         }
+
         .links:hover {
             text-decoration: underline;
         }
+
         body {
             min-height: 400px;
             background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
@@ -63,16 +66,19 @@
             border-collapse: collapse;
             width: 100%;
         }
+
         h1 {
             color: white;
         }
+
         th,
         tr,
         td {
             border: solid 1px white;
             color: white;
         }
-        th{
+
+        th {
             height: 50px;
             background: #f4f8f72c;
         }
@@ -95,7 +101,7 @@
 
         .form-wrapper button {
             border: 2px solid #da1e26;
-            color:#da1e26;
+            color: #da1e26;
             background: rgba(255, 255, 255, 0.089);
             font-weight: bold;
             padding: 15px 20px;
@@ -127,7 +133,6 @@
         .btnD {
             background: #bb4a4fef;
         }
- 
     </style>
 </head>
 
@@ -149,11 +154,11 @@
             <p class="page-subtitle">Nome Jogador:
                 <input type="text" id="nomeJogador" placeholder="Insira o nome do Jogador">
                 Link da Imagem:
-                <input  type="text" id="imagem" placeholder="Insira endereço de imagem"> 
-                <button  onClick="adicionarJogador()">Adicionar</button>
+                <input type="text" id="imagem" placeholder="Insira endereço de imagem">
+                <button onClick="adicionarJogador()">Adicionar</button>
             </p>
         </div>
-        <table >
+        <table>
             <thead>
                 <tr>
                     <th>Foto</th>
