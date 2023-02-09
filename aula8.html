@@ -5,200 +5,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./public/css/style.css">
   <title> Imersão Dev - Super Trunfo</title>
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      min-height: 854px;
-      background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-07-super-trunfo-bg.png');
-      background-color: #000000;
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      padding-bottom: 20vh;
-    }
-
-    .container {
-      text-align: center;
-      margin-top: 80px;
-      height: 100vh;
-
-    }
-
-    .page-title {
-      color: #ffffff;
-      margin: 5px 0;
-    }
-
-    .resultado-final {
-      color: black;
-      font-size: 25px;
-      border-radius: 5px;
-      padding: 10px;
-      background-color: #ffffff33;
-      border: 2px solid;
-    }
-
-    .btnV {
-      color: rgb(24, 179, 10);
-    }
-
-    .btnE {
-      color: rgb(20, 170, 163);
-
-    }
-
-    .btnP {
-      color: red;
-    }
-
-    button,
-    .button-jogar {
-      margin: 1rem 0;
-      border-radius: 5px;
-      border: none;
-      font-weight: bolder;
-      width: 180px;
-      height: 50px;
-      text-transform: uppercase;
-      background-color: rgba(255, 255, 255, 0.11);
-      color: gold;
-      border: 2px solid;
-      cursor: pointer;
-
-    }
-
-    h2 {
-      color: white;
-    }
-
-    #carta-jogador,
-    #carta-maquina {
-      width: 360px;
-      height: 500px;
-      overflow: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-end;
-      position: relative;
-      background-size: 350px 300px;
-      background-repeat: no-repeat;
-      background-position-x: 5px;
-      background-position-y: 10px;
-      border-radius: 33px;
-    }
-
-    .alura-logo {
-      width: 60px;
-      position: absolute;
-      top: 100px;
-      right: 50px;
-    }
-
-    #carta-jogador h3 {
-      text-align: center;
-    }
-
-    .carta-imagem {
-      border: 1px solid black;
-      height: 100px;
-      margin: 10px;
-    }
-
-    .carta-imagem img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .carta-status {
-      height: 160px;
-      margin: 2rem;
-      color: white;
-      z-index: 2;
-    }
-
-    .carta-status input {
-      margin: 20px 10px;
-    }
-
-    .--spacing {
-      margin-left: 2.5rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .wrapper {
-      display: flex;
-      justify-content: space-around;
-      width: 90%;
-    }
-
-    .carta-subtitle {
-      z-index: 2;
-      position: absolute;
-      top: 16px;
-      left: 37px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    #cartas {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .carta-status p {
-      margin-bottom: 2rem;
-    }
-
-    .divLinks {
-      position: absolute;
-      top: 0;
-      padding: 20px;
-    }
-
-    .links {
-      text-decoration: none;
-      color: white;
-
-    }
-
-    .links:hover {
-      text-decoration: underline;
-      color: #ffffff;
-    }
-  </style>
 </head>
 
-<body>
-  <div class="container">
-    <div class="divLinks">
-      <a class="links" href="./index.html">Home</a>
-      <a class="links" href="./aula1.html">🔢Calculadora de média</a>
-      <a class="links" href="./aula2.html">💸Conversor de moedas</a>
-      <a class="links" href="./aula3.html">🔮Mentalista</a>
-      <a class="links" href="./aula5.html">🎥AluraFlix</a>
-      <a class="links" href="/aula6.html">😎Objetos e tabelas de classificação</a>
-      <a class="links" href="./aula8.html">🎮Super Trunfo</a>
-    </div>
-    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" class="page-logo"
-      alt="">
-    <h1 class="page-title">Super Trunfo</h1>
-    <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+<body class="bodySuperTrunfo">
+
+  <header>
+    <nav>
+      <ul>
+        <li> <a class="home" href="./index.html">🏠 Home</a></li>
+        <li> <a href="./aula1.html">🔢 Calculadora de média</a></li>
+        <li><a href="./aula2.html">💸 Conversor de moedas</a></li>
+        <li><a href="./aula3.html">🔮 Mentalista</a></li>
+        <li><a href="./aula5.html">🎥 AluraFlix</a></li>
+        <li> <a href="/aula6.html">😎 Tabelas de classificação</a></li>
+        <li> <a href="./aula8.html">🎮 Super Trunfo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="mainSuperTrunfo">
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" alt="">
+    <h1>Super Trunfo</h1>
+    <button class=" sortear" onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
     <form id="form">
       <h2>Escolha o seu atributo</h2>
       <div class="wrapper">
         <div>
           <div id="carta-jogador">
             <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png"
-              style=" width: inherit; height: inherit; position: absolute;">
-            <h3></h3>
+              style=" width: inherit; height: inherit; ">
+            <!-- <h3></h3> -->
           </div>
         </div>
         <div>
@@ -217,7 +54,7 @@
     <a href="https://alura.com.br/" target="_blank">
       <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
     </a>
-  </div>
+  </main>
 
   <script>
     let cartaPaulo = {
